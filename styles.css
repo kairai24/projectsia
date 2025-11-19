@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+.landing-page {
+    position: relative;
+    width: 1440px;
+    height: 890px;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 1) 6%, rgba(23, 27, 66, 1) 100%, rgba(70, 77, 148, 1) 100%);
+    overflow: hidden;
+}
+
+/* Background Image with Blur */
+.background-image {
+    position: absolute;
+    left: -57px;
+    top: 0;
+    width: 1568px;
+    height: 890px;
+    background-image: url('images/background-blur-5a194a.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(53.4px);
+    z-index: 1;
+}
+
+/* Top Navigation Bar */
+.nav-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1440px;
+    height: 78px;
+    background-color: #06071A;
+    z-index: 10;
+}
+
+/* Logo Group */
+.logo-group {
+    position: absolute;
+    left: 42px;
+    top: 11px;
+    width: 350px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+}
+
+.logo-image {
+    width: 63.66px;
+    height: 46.1px;
+    object-fit: contain;
+}
+
+.logo-text {
+    margin-left: 0.34px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.2102272396995908em;
+    color: #17B7AA;
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+/* Sign In Button */
+.sign-in-button {
+    position: absolute;
+    left: 1267px;
+    top: 20px;
+    width: 133px;
+    height: 39px;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.sign-in-bg {
+    position: absolute;
+    width: 133px;
+    height: 39px;
+    background-color: #1EB9D4;
+    border-radius: 21px;
+}
+
+.sign-in-text {
+    position: absolute;
+    left: 29px;
+    top: 5px;
+    width: 74px;
+    height: 29px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 1.2102272396995908em;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+/* Main Heading Line 1 */
+.heading-line1 {
+    position: absolute;
+    left: 410px;
+    top: 226px;
+    width: 620px;
+    height: 95px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 1.2102272510528564em;
+    color: #FFFFFF;
+    z-index: 15;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Main Heading Line 2 */
+.heading-line2 {
+    position: absolute;
+    left: 496px;
+    top: 288px;
+    width: 449px;
+    height: 76px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 1.2102272510528564em;
+    color: #17B7AA;
+    z-index: 15;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Description Text */
+.description {
+    position: absolute;
+    left: 283px;
+    top: 408px;
+    width: 875px;
+    height: 75px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1.2102272033691406em;
+    color: #FFFFFF;
+    z-index: 15;
+    margin: 0;
+}
+
+/* CTA Button */
+.cta-button {
+    position: absolute;
+    left: 557px;
+    top: 527px;
+    width: 325.36px;
+    height: 78.35px;
+    z-index: 15;
+    cursor: pointer;
+}
+
+.cta-bg {
+    position: absolute;
+    width: 325.36px;
+    height: 78.35px;
+    background-color: #142430;
+    border: 3px solid #17B7AA;
+    border-radius: 15px;
+}
+
+.cta-text {
+    position: absolute;
+    left: 38.78px;
+    top: 23.8px;
+    width: 248.87px;
+    height: 29.75px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2102272510528564em;
+    color: #17B7AA;
+    display: flex;
+    align-items: center;
+}
+
