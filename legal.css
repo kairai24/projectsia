@@ -1,0 +1,72 @@
+:root{
+  --bg:#0b1120;
+  --muted:#9fb0bd;
+  --accent:#14b8a6;
+  --accent-2:#22d3ee;
+}
+
+/* Page base */
+body{
+  background:var(--bg);
+  color:#e6eef3;
+  font-family:"Segoe UI",sans-serif;
+}
+
+/* Legal page container */
+.legal-container{
+  max-width:900px;
+  margin:40px auto;
+  padding:0 20px;
+}
+.legal-container h1{
+  font-size:32px;
+  margin-bottom:4px;
+}
+.updated{
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.legal-container h2{
+  margin-top:28px;
+  margin-bottom:8px;
+  font-size:20px;
+  color:var(--accent-2);
+}
+
+.legal-container p,
+.legal-container li{
+  line-height:1.7;
+  color:#d7e3ea;
+  margin-bottom:8px;
+}
+
+ul{margin-left:20px}
+
+/* Navbar + Footer pulled from your existing design */
+.navbar{background:rgba(3,7,18,0.9);padding:14px 20px;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,0.05)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px}
+.logo-group{display:flex;align-items:center;gap:10px}
+.logo-img{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.05);padding:4px}
+.logo-text{color:var(--accent-2);font-weight:700;letter-spacing:.06em;font-size:14px}
+.nav-center{flex:1;display:flex;justify-content:center;gap:24px}
+.nav-center a{text-decoration:none;color:#cbd5f5;font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.search-box{padding:8px 12px;border-radius:8px;border:none;background:#0d1422;color:white}
+
+.icon-pill{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  padding:8px 14px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  color:#08211b;
+  font-weight:700;
+}
+
+/* footer */
+.site-footer{background:#0b1220;padding:40px;margin-top:50px;border-top:1px solid rgba(255,255,255,0.02)}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+.footer-grid a{color:var(--muted);text-decoration:none;margin-bottom:6px;display:block}
+footer .muted{color:var(--muted)}
+footer p{color:var(--muted);text-align:center;margin-top:30px}

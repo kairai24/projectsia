@@ -1,49 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS GADGETS - Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Nexus Gadgets Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-    <div class="landing-page">
-        <!-- Background Image with Blur -->
-        <div class="background-image"></div>
-        
-        <!-- Top Navigation Bar -->
-        <div class="nav-bar"></div>
-        
-        <!-- Logo Group -->
-        <div class="logo-group">
-            <img src="images/logo-133220.png" alt="Logo" class="logo-image">
-            <span class="logo-text">NEXUS GADGETS</span>
-        </div>
-        
-        <!-- Sign In Button -->
-        <div class="sign-in-button">
-            <div class="sign-in-bg"></div>
-            <span class="sign-in-text">Sign in</span>
-        </div>
-        
-        <!-- Main Content -->
-        <h1 class="heading-line1">Discover the Latest</h1>
-        <h1 class="heading-line2">Tech Gadgets</h1>
-        
-        <p class="description">
-            We connect you with next generation smartphones, wearable, and computing solutions.
-            Find the most innovative device and power for you digital life.
-        </p>
-        
-        <!-- CTA Button -->
-        <div class="cta-button">
-            <div class="cta-bg"></div>
-            <span class="cta-text">Start Exploring Now </span>
-        </div>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="nav-inner">
+
+    <!-- LEFT: LOGO + NAME -->
+    <div class="logo-group">
+      <img src="logo.png" alt="Nexus Gadgets Logo" class="logo-img" />
+      <span class="logo-text">NEXUS GADGETS</span>
     </div>
+
+    <!-- CENTER: NAV LINKS -->
+    <nav class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="sell.html">Sell</a>
+    </nav>
+
+    <!-- RIGHT: SEARCH + CART + ACCOUNT -->
+    <div class="nav-right">
+      <input type="text" class="search-box" placeholder="Search gadgets..." />
+
+      <button class="icon-btn">
+        🛒
+      </button>
+
+      <button class="icon-btn">
+        👤
+      </button>
+    </div>
+
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover the Latest<br><span>Tech Gadgets</span></h1>
+      <p>
+        From cutting-edge smartphones to powerful laptops, find everything you need.
+        Plus, sell your old gadgets and give them a new life.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Shop Now →</a>
+        <a href="#" class="btn-outline">Sell Your Gadget +</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section>
+    <h2 class="section-title">Featured Categories</h2>
+    <p class="section-sub">Explore our wide range of tech products across different categories</p>
+
+    <div class="categories">
+      <div class="category-card">
+        <img src="phone.jpg" />
+        <div class="category-info">
+          <h3>Smartphones</h3>
+          <p>Latest mobile devices</p>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <img src="laptop.jpg" />
+        <div class="category-info">
+          <h3>Laptops</h3>
+          <p>Powerful computing solutions</p>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <img src="accessories.jpg" />
+        <div class="category-info">
+          <h3>Accessories</h3>
+          <p>Essential tech accessories</p>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <img src="second-hand.jpg" />
+        <div class="category-info">
+          <h3>Second-Hand</h3>
+          <p>Quality pre-owned devices</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section>
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-sub">Discover popular and latest gadgets</p>
+
+    <div class="products">
+      <div class="product-card">
+        <img src="iphone.jpg" />
+        <div class="product-info">
+          <h3>iPhone 15 Pro Max</h3>
+          <div class="price">$1199</div>
+          <button class="cart-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="macbook.jpg" />
+        <div class="product-info">
+          <h3>MacBook Air M3</h3>
+          <div class="price">$1099</div>
+          <button class="cart-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="headphones.jpg" />
+        <div class="product-info">
+          <h3>Sony WH-1000XM5</h3>
+          <div class="price">$349</div>
+          <button class="cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sell Section -->
+  <section class="sell-section">
+    <h2 class="section-title">Sell Your Gadget Today</h2>
+    <p class="section-sub">Turn your unused gadgets into cash easily.</p>
+
+    <div class="sell-cards">
+      <div class="sell-card">
+        <h3>Quick Listing</h3>
+        <p>List your gadget in under 5 minutes</p>
+      </div>
+
+      <div class="sell-card">
+        <h3>Secure Payments</h3>
+        <p>Safe and protected transactions</p>
+      </div>
+
+      <div class="sell-card">
+        <h3>Best Prices</h3>
+        <p>Get maximum value for your device</p>
+      </div>
+    </div>
+
+    <br />
+    <a href="#" class="btn-primary">Start Selling Now →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Nexus Gadgets Store</h4>
+        <p>Your trusted marketplace for modern gadgets.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+
+      <div>
+        <h4>Categories</h4>
+        <a href="categories.html">Smartphones</a>
+        <a href="categories.html">Laptops</a>
+        <a href="categories.html">Accessories</a>
+        <a href="categories.html">Second-Hand</a>
+      </div>
+    </div>
+
+    <p class="copyright">© 2025 Nexus Gadgets Store</p>
+  </footer>
+
 </body>
 </html>
-

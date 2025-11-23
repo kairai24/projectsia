@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nexus Gadgets — Landing</title>
+  <link rel="stylesheet" href="land-page.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-inner">
+      <div class="logo-group">
+        <img src="logo.png" alt="Nexus Gadgets Logo" class="logo-img" />
+        <span class="logo-text">NEXUS GADGETS</span>
+      </div>
+
+      <button id="openSignBtn" class="signin-btn">Sign in</button>
+    </div>
+  </header>
+
+  <!-- HERO / LANDING -->
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1>
+          <span class="hero-title-main">Discover the Latest</span><br />
+          <span class="hero-title-accent">Tech Gadgets</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          We connect you with next generation smartphones, wearable, and computing solutions.
+          <br />
+          Find the most innovative device and power for your digital life.
+        </p>
+
+        <a href="#categories" class="btn-hero">Start Exploring Now</a>
+      </div>
+    </section>
+
+    <section id="categories" class="spacer"></section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Nexus Gadgets Store</h4>
+        <p>Your trusted marketplace for the latest gadgets and quality second-hand electronics. Discover, buy, and sell with confidence.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+
+    <p class="copyright">© 2025 Nexus Gadgets Store</p>
+  </footer>
+
+  <!-- OVERLAY + MODAL (Sign In / Create Account) -->
+  <div id="overlay" class="overlay" aria-hidden="true">
+    <div id="modalCard" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">Sign In</div>
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- SIGN IN VIEW -->
+      <div id="signInView">
+        <div class="field">
+          <label class="muted">Email Address</label>
+          <input id="siEmail" class="input" type="email" placeholder="you@example.com" />
+          <div id="err-siEmail" class="error-text"></div>
+        </div>
+
+        <div class="field">
+          <label class="muted">Password</label>
+          <input id="siPassword" class="input" type="password" placeholder="********" />
+          <div id="err-siPassword" class="error-text"></div>
+        </div>
+
+        <button id="signInSubmit" class="primary-cta">Sign In</button>
+
+        <div class="secondary-link">
+          Don’t have an account? <a href="#" id="toCreateLink">Create Account</a>
+        </div>
+      </div>
+
+      <!-- CREATE ACCOUNT VIEW -->
+      <div id="createView" class="hidden">
+
+        <div class="checkbox-row">
+          <label><input id="isUser" type="checkbox" checked /> User Account</label>
+          <label><input id="isAdmin" type="checkbox" /> Admin Account</label>
+        </div>
+
+        <!-- USER FIELDS -->
+        <div id="userFields">
+          <div class="form-row" style="gap:12px;">
+            <div style="flex:1;">
+              <label>First Name</label>
+              <input id="firstName" class="input" type="text" placeholder="First name" />
+              <div id="err-firstName" class="error-text"></div>
+            </div>
+            <div style="flex:1;">
+              <label>Last Name</label>
+              <input id="lastName" class="input" type="text" placeholder="Last name" />
+              <div id="err-lastName" class="error-text"></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Email Address</label>
+            <input id="cuEmail" class="input" type="email" placeholder="you@example.com" />
+            <div id="err-cuEmail" class="error-text"></div>
+          </div>
+
+          <div class="form-row" style="margin-top:8px;">
+            <div style="flex:1;">
+              <label>Age (must be 18+)</label>
+              <input id="age" class="input-small" type="number" placeholder="Age" min="18" />
+              <div id="err-age" class="error-text"></div>
+            </div>
+            <div style="flex:1;">
+              <label>Gender</label>
+              <select id="gender" class="input-small">
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <div id="err-gender" class="error-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN FIELDS -->
+        <div id="adminFields" class="hidden">
+          <div class="form-row">
+            <div style="flex:1;">
+              <label>Last Name</label>
+              <input id="adminLast" class="input" type="text" placeholder="Last name" />
+              <div id="err-adminLast" class="error-text"></div>
+            </div>
+            <div style="flex:1;">
+              <label>Employee ID</label>
+              <input id="employeeId" class="input" type="text" placeholder="Employee ID" />
+              <div id="err-employeeId" class="error-text"></div>
+            </div>
+          </div>
+        </div>
+
+    <!-- Password -->
+    <div class="field" style="margin-top:8px; position: relative;">
+    <label>Password</label>
+
+     <!-- wrapper to position toggle -->
+    <div class="input-wrap">
+     <input id="cuPassword" class="input" type="password" placeholder="Create Password" />
+      <button type="button" class="toggle-pw" data-target="cuPassword" aria-label="Show password">Show</button>
+     </div>
+
+    <div id="err-cuPassword" class="error-text"></div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="field" style="margin-top:8px; position: relative;">
+    <label>Confirm Password</label>
+
+     <div class="input-wrap">
+       <input id="cuPassword2" class="input" type="password" placeholder="Confirm Password" />
+       <button type="button" class="toggle-pw" data-target="cuPassword2" aria-label="Show confirm password">Show</button>
+     </div>
+
+     <div id="err-cuPassword2" class="error-text"></div>
+    </div>
+
+
+        <div style="margin-top:10px;" class="checkbox-row">
+          <label><input id="agree" type="checkbox" /> I agree to the
+            <a href="terms.html" style="color:#22d3ee">Terms of Service</a> and
+            <a href="privacy.html" style="color:#22d3ee">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <!-- note: create button starts disabled until form valid -->
+        <button id="createSubmit" class="primary-cta" disabled>Create Account</button>
+
+        <div class="secondary-link">
+          Already have an account? <a href="#" id="toSignInLink">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="modal-demo-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nexus Gadgets — Sell</title>
+  <link rel="stylesheet" href="sell.css" />
+</head>
+<body>
+  <!-- NAVBAR (same pattern used on other pages) -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="logo-group">
+        <!-- using your uploaded logo path -->
+        <img src="logo.png" alt="Nexus Gadgets Logo" class="logo-img" />
+        <span class="logo-text">NEXUS GADGETS</span>
+      </div>
+
+      <nav class="nav-center" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="sell.html" class="active">Sell</a>
+      </nav>
+
+      <div class="nav-right">
+        <input type="text" class="search-box" placeholder="Search gadgets..." aria-label="Search" />
+        <button class="icon-pill cart-pill" aria-label="Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6h15l-1.5 9h-12L4 2H1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="cart-badge">3</span>
+        </button>
+
+        <button id="openSignBtn" class="icon-pill account-pill" aria-label="Account">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <div class="container">
+      <h1 class="page-title">Sell Your Gadget</h1>
+      <p class="subtitle">List your tech products and reach thousands of potential buyers</p>
+
+      <form id="sellForm" class="sell-form" novalidate>
+        <div class="panel">
+          <h2>Basic Information</h2>
+          <label class="field">
+            <span class="label">Product Title *</span>
+            <input id="title" name="title" type="text" placeholder="e.g., iPhone 14 Pro Max - 256GB - Space Black" />
+            <div class="error" id="err-title"></div>
+          </label>
+
+          <div class="row">
+            <label class="field half">
+              <span class="label">Category *</span>
+              <select id="category" name="category">
+                <option value="">Select Category</option>
+                <option>Smartphones</option>
+                <option>Laptops</option>
+                <option>Accessories</option>
+                <option>Second-Hand Gadgets</option>
+                <option>Tablets</option>
+                <option>Audio</option>
+              </select>
+              <div class="error" id="err-category"></div>
+            </label>
+
+            <label class="field half">
+              <span class="label">Condition *</span>
+              <select id="condition" name="condition">
+                <option value="">Select Condition</option>
+                <option>Like New</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Fair</option>
+              </select>
+              <div class="error" id="err-condition"></div>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Product Details</h2>
+
+          <div class="row">
+            <label class="field third">
+              <span class="label">Brand</span>
+              <input id="brand" type="text" placeholder="e.g., Apple, Samsung, Sony" />
+            </label>
+
+            <label class="field third">
+              <span class="label">Model</span>
+              <input id="model" type="text" placeholder="e.g., iPhone 14 Pro, Galaxy S23" />
+              <div class="error" id="err-model"></div>
+            </label>
+
+            <label class="field third">
+              <span class="label">Year</span>
+              <input id="year" type="number" min="2000" max="2099" placeholder="e.g., 2023" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="label">Description *</span>
+            <textarea id="description" maxlength="500" placeholder="Describe your item's condition, features, and any included accessories..."></textarea>
+            <div class="meta small" id="descCount">0 / 500</div>
+            <div class="error" id="err-description"></div>
+          </label>
+
+          <div style="margin-top:10px; display:flex; gap:12px; align-items:center;">
+            <div id="sellerLabelBadge" style="display:none; font-weight:700; padding:6px 10px; border-radius:999px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#081816;">
+              <!-- filled by JS -->
+            </div>
+            <div id="labelNote" class="muted" style="font-size:0.95rem;"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Photos</h2>
+
+          <div id="dropzone" class="dropzone">
+            <div class="dz-inner">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M16 16v4H4V8h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 15v2a2 2 0 0 1-2 2H8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 10l3-3 2 2 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="dz-text">Upload up to 6 photos<br><span class="small muted">JPG, PNG or GIF (max 5MB each)</span></div>
+              <button type="button" id="chooseFilesBtn" class="btn-secondary">Choose Files</button>
+            </div>
+
+            <input id="photoInput" type="file" accept="image/*" multiple class="hidden" />
+          </div>
+
+          <div id="preview" class="preview-grid" aria-live="polite"></div>
+          <div class="error" id="err-photos"></div>
+        </div>
+
+        <div class="panel">
+          <h2>Pricing &amp; Shipping</h2>
+
+          <div class="row">
+            <label class="field half">
+              <span class="label">Price *</span>
+              <input id="price" type="number" min="0" step="0.01" placeholder="$ 0.00" />
+              <div class="error" id="err-price"></div>
+            </label>
+
+            <label class="field half">
+              <span class="label">Warranty</span>
+              <input id="warranty" type="text" placeholder="e.g., 6 months remaining" />
+            </label>
+          </div>
+
+          <div class="row">
+            <label class="field half">
+              <span class="label">Location *</span>
+              <input id="location" type="text" placeholder="City, State" />
+              <div class="error" id="err-location"></div>
+            </label>
+
+            <!-- Shipping & payment are fixed: buyer pays shipping + COD -->
+            <div class="field half" style="display:flex;flex-direction:column;justify-content:center;">
+              <div class="muted" style="font-weight:600">Shipping: Buyer pays shipping (automatic)</div>
+              <div class="muted" style="font-weight:600;margin-top:6px">Payment: Cash on Delivery (COD) only</div>
+
+              <!-- Hidden fields so form/JS still include values -->
+              <input type="hidden" id="shipping" value="Buyer Pays Shipping" />
+              <input type="hidden" id="paymentMethod" value="Cash on Delivery" />
+            </div>
+          </div>
+
+          <div class="actions-row">
+            <button type="button" id="saveDraft" class="btn-secondary">Save as Draft</button>
+            <button type="submit" id="submitBtn" class="btn-primary">Submit for Review</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Nexus Gadgets Store</h4>
+        <p class="muted">Your trusted marketplace for the latest gadgets and quality second-hand electronics. Discover, buy, and sell with confidence.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+
+      <div>
+        <h4>Categories</h4>
+        <a href="categories.html">Smartphones</a>
+        <a href="categories.html">Laptops</a>
+        <a href="categories.html">Accessories</a>
+        <a href="categories.html">Second-Hand</a>
+      </div>
+    </div>
+
+    <p class="copyright">© 2025 Nexus Gadgets Store</p>
+  </footer>
+
+  <script src="sell.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+:root{
+  --bg: #0b1120;
+  --panel: #151b24;
+  --muted: #9fb0bd;
+  --accent: #14b8a6;
+  --accent-2: #22d3ee;
+  --card: #0f1724;
+  --error: #ef4444;
+}
+
+/* Reset & base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color:#e6eef3;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* NAVBAR */
+/* NAVBAR layout (left logo, centered links, right controls) */
+header.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: linear-gradient(to bottom, rgba(3,7,18,0.95), rgba(3,7,18,0.6));
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  padding: 10px 20px;
+}
+
+/* container for navbar - align items and allow center area to expand */
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* left (logo) */
+.logo-group { display:flex; align-items:center; gap:10px; flex: 0 0 auto; }
+.logo-img { width:36px; height:36px; object-fit:contain; border-radius:8px; background: rgba(255,255,255,0.02); padding:4px; }
+.logo-text { color: var(--accent-2); font-weight:700; letter-spacing:.06em; font-size:14px; }
+
+/* center nav - grows to fill space and centers its children */
+.nav-center {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.nav-center a {
+  color: #cbd5f5;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.nav-center a.active {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #081816;
+  padding: 6px 12px;
+}
+
+/* right controls - does not grow */
+.nav-right { display:flex; align-items:center; gap:12px; flex: 0 0 auto; }
+
+/* search box */
+.search-box {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  background: #0b1220;
+  color: #cfeff0;
+  min-width: 200px;
+  transition: width .18s ease;
+}
+.search-box:focus { outline: none; box-shadow: 0 6px 20px rgba(34,211,238,0.06); }
+
+/* pill buttons matching landing page logo style */
+.icon-pill {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border: none;
+  cursor: pointer;
+  color: #e7fbf8;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 8px 24px rgba(34,197,94,0.18);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.icon-pill:hover { transform: translateY(-2px); filter: brightness(1.03); }
+.icon-pill svg { color: #08211b; } /* dark icon on bright pill */
+
+/* cart badge */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #08211b;
+  color: var(--accent-2);
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 2px solid rgba(255,255,255,0.06);
+  box-shadow: 0 4px 12px rgba(2,6,11,0.6);
+}
+
+/* Responsive: hide center nav on small screens, shorten search box */
+@media (max-width: 880px) {
+  .nav-center { display: none; }
+  .search-box { min-width: 110px; }
+  .logo-text { display: none; } /* optional: hide text to save space */
+}
+/* ensure logo exactly like landing page */
+.logo-group { display:flex; align-items:center; gap:10px; }
+.logo-img { width:34px; height:34px; object-fit:contain; border-radius:8px; background: rgba(255,255,255,0.02); padding:4px; }
+.logo-text { color: var(--accent-2); font-weight:700; letter-spacing:.06em; font-size:14px; }
+
+/* pill-style icon buttons (cart & account) matching landing logo gradient */
+.icon-pill {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border: none;
+  cursor: pointer;
+  color: #e7fbf8;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 8px 24px rgba(34,197,94,0.18);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+/* slightly different subtle variant for cart (keeps icon visible) */
+.cart-pill { padding:8px 12px; position: relative; }
+
+/* hover effect same as landing page */
+.icon-pill:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+/* cart badge style (small circle with number) */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #08211b; /* inner dark ring for contrast */
+  color: var(--accent-2);
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 2px solid rgba(255,255,255,0.06);
+  box-shadow: 0 4px 12px rgba(2,6,11,0.6);
+}
+
+/* keep search-box spacing consistent */
+.nav-right { display:flex; align-items:center; gap:12px; }
+
+/* ensure icons use currentColor */
+.icon-pill svg { color: #08211b; } /* dark icon on bright pill like landing page */
+
+/* responsive tweaks */
+@media (max-width:640px){
+  .logo-text { display:none; }
+  .search-box { min-width:110px; }
+  .nav-center { display: none; } /* keep small screens tidy */
+}
+
+/* PAGE LAYOUT */
+.container{max-width:1200px;margin:34px auto;padding:0 20px}
+.page-title h1{font-size:28px;margin-bottom:8px}
+.subtitle{color:var(--muted);margin-bottom:18px}
+
+/* layout grid: sidebar + main */
+.layout{display:grid;grid-template-columns: 280px 1fr; gap:28px;align-items:start}
+.filters{background:#12161b;padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+.filters h3{margin-bottom:12px}
+.filter-block{margin:14px 0}
+.filter-label{display:block;color:var(--muted);margin-bottom:8px}
+.category-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.category-list li{padding:10px;border-radius:8px;color:#cfeff0;background:transparent;cursor:pointer}
+.category-list li .count{float:right;color:var(--muted);font-size:13px}
+.category-list li.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#08211b}
+
+/* selects / buttons */
+.select{width:100%;padding:10px;border-radius:10px;border:none;background:#0b1220;color:#cfeff0}
+.btn-outline{display:block;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#cfeff0;cursor:pointer}
+.fullwidth{width:100%}
+
+/* PRODUCTS AREA */
+.products-area{}
+.products-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;color:var(--muted)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* product card */
+.card{
+  background: linear-gradient(180deg,#18222a,#0e1620);
+  border-radius:12px;
+  padding:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 20px rgba(2,6,11,0.6);
+}
+.card .thumb{background:#fff;padding:18px;display:flex;align-items:center;justify-content:center;height:170px}
+.card .thumb img{max-width:100%;max-height:100%;object-fit:contain}
+.card .body{padding:14px}
+.card h4{font-size:15px;margin-bottom:8px}
+.price{color:var(--accent-2);font-weight:700;font-size:18px;margin-bottom:8px}
+.meta{color:var(--muted);font-size:13px;margin-bottom:12px}
+.card .actions{display:flex;gap:10px;align-items:center}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#08211b;padding:8px 12px;border-radius:8px;cursor:pointer}
+.btn-secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:#cfeff0;padding:8px 12px;border-radius:8px;cursor:pointer}
+
+/* center container for load more */
+.center{text-align:center;margin:20px 0}
+.btn-primary-outline{padding:8px 16px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cfeff0;cursor:pointer}
+
+/* footer */
+.site-footer{margin-top:40px;background:#0b1220;padding:36px 20px;border-top:1px solid rgba(255,255,255,0.02)}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;color:var(--muted)}
+.site-footer a{color:var(--muted);display:block;margin:6px 0;text-decoration:none}
+
+/* small screen */
+@media (max-width: 960px){
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .layout{grid-template-columns:220px 1fr}
+}
+@media (max-width: 640px){
+  .layout{grid-template-columns:1fr;gap:18px}
+  .filters{order:2}
+  .product-grid{grid-template-columns:1fr}
+  .nav-center{display:none}
+  .search-box{min-width:110px}
+}
+
